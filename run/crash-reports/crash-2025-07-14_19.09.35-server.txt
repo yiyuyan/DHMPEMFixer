@@ -1,0 +1,169 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2025-07-14 19:09:35
+Description: Exception initializing level
+
+java.lang.NullPointerException: Cannot invoke "com.seibel.distanthorizons.core.wrapperInterfaces.minecraft.IMinecraftClientWrapper.clientConnectedToDedicatedServer()" because "com.seibel.distanthorizons.forge.ForgeClientProxy.MC" is null
+	at com.seibel.distanthorizons.forge.ForgeClientProxy.clientChunkLoadEvent(ForgeClientProxy.java:250) ~[distanthorizons-2.3.3-b-1.20.1_mapped_official_1.20.1.jar%23198!/:?] {re:mixin,re:classloading,pl:mixin:APP:dhmpemfixer.mixins.json:ForgeClientProxyMixin,pl:mixin:A}
+	at com.seibel.distanthorizons.forge.__ForgeClientProxy_clientChunkLoadEvent_Load.invoke(.dynamic) ~[distanthorizons-2.3.3-b-1.20.1_mapped_official_1.20.1.jar%23198!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$protoChunkToFullChunk$34(ChunkMap.java:722) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:DistantHorizons.forge.mixins.json:server.MixinChunkMap,pl:mixin:A}
+	at com.mojang.datafixers.util.Either.lambda$mapLeft$0(Either.java:162) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at com.mojang.datafixers.util.Either.mapLeft(Either.java:162) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$protoChunkToFullChunk$35(ChunkMap.java:699) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:DistantHorizons.forge.mixins.json:server.MixinChunkMap,pl:mixin:A}
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.lambda$message$1(ChunkTaskPriorityQueueSorter.java:62) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.doRunTask(ServerChunkCache.java:541) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.pollTask(ServerChunkCache.java:549) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:139) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache.getChunk(ServerChunkCache.java:131) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.getChunk(Level.java:187) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:mixins.mpem.json:LevelMixin,pl:mixin:A}
+	at net.minecraft.world.level.LevelReader.getChunk(LevelReader.java:129) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,re:classloading}
+	at net.minecraft.world.level.Level.getChunk(Level.java:182) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:mixins.mpem.json:LevelMixin,pl:mixin:A}
+	at net.minecraft.server.level.PlayerRespawnLogic.getOverworldRespawnPos(PlayerRespawnLogic.java:23) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.server.level.PlayerRespawnLogic.getSpawnPosInChunk(PlayerRespawnLogic.java:64) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.setInitialSpawn(MinecraftServer.java:409) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.createLevels(MinecraftServer.java:346) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:308) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.initServer(IntegratedServer.java:63) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:634) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Suspected Mod: 
+	Distant Horizons (distanthorizons), Version: 2.3.3-b
+		Issue tracker URL: https://gitlab.com/jeseibel/distant-horizons/-/issues
+		at TRANSFORMER/distanthorizons@2.3.3-b/com.seibel.distanthorizons.forge.ForgeClientProxy.clientChunkLoadEvent(ForgeClientProxy.java:250)
+Stacktrace:
+	at com.seibel.distanthorizons.forge.ForgeClientProxy.clientChunkLoadEvent(ForgeClientProxy.java:250) ~[distanthorizons-2.3.3-b-1.20.1_mapped_official_1.20.1.jar%23198!/:?] {re:mixin,re:classloading,pl:mixin:APP:dhmpemfixer.mixins.json:ForgeClientProxyMixin,pl:mixin:A}
+	at com.seibel.distanthorizons.forge.__ForgeClientProxy_clientChunkLoadEvent_Load.invoke(.dynamic) ~[distanthorizons-2.3.3-b-1.20.1_mapped_official_1.20.1.jar%23198!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23114!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$protoChunkToFullChunk$34(ChunkMap.java:722) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:DistantHorizons.forge.mixins.json:server.MixinChunkMap,pl:mixin:A}
+	at com.mojang.datafixers.util.Either.lambda$mapLeft$0(Either.java:162) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at com.mojang.datafixers.util.Either.mapLeft(Either.java:162) ~[datafixerupper-6.0.8.jar%23136!/:?] {}
+	at net.minecraft.server.level.ChunkMap.lambda$protoChunkToFullChunk$35(ChunkMap.java:699) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:DistantHorizons.forge.mixins.json:server.MixinChunkMap,pl:mixin:A}
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?] {}
+	at net.minecraft.server.level.ChunkTaskPriorityQueueSorter.lambda$message$1(ChunkTaskPriorityQueueSorter.java:62) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:156) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.doRunTask(ServerChunkCache.java:541) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:130) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache$MainThreadExecutor.pollTask(ServerChunkCache.java:549) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:139) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerChunkCache.getChunk(ServerChunkCache.java:131) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.getChunk(Level.java:187) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:mixins.mpem.json:LevelMixin,pl:mixin:A}
+	at net.minecraft.world.level.LevelReader.getChunk(LevelReader.java:129) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,re:classloading}
+	at net.minecraft.world.level.Level.getChunk(Level.java:182) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:mixins.mpem.json:LevelMixin,pl:mixin:A}
+	at net.minecraft.server.level.PlayerRespawnLogic.getOverworldRespawnPos(PlayerRespawnLogic.java:23) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.server.level.PlayerRespawnLogic.getSpawnPosInChunk(PlayerRespawnLogic.java:64) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.setInitialSpawn(MinecraftServer.java:409) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: 625
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (8,64,8), Section: (at 8,0,8 in 0,4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 0 game time, 0 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Known server brands: forge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.createLevels(MinecraftServer.java:346) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:308) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.initServer(IntegratedServer.java:63) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:634) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.4.0_mapped_official_1.20.1.jar%23191!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.2, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 929740960 bytes (886 MiB) / 1746927616 bytes (1666 MiB) up to 4280287232 bytes (4082 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 9
+	Microarchitecture: Kaby Lake
+	Frequency (GHz): 3.60
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce GTX 750 Ti
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 2048.00
+	Graphics card #0 deviceId: 0x1380
+	Graphics card #0 versionInfo: DriverVersion=31.0.15.3758
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 2.40
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 2.40
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MB): 8192.00
+	Memory slot #2 clockSpeed (GHz): 2.40
+	Memory slot #2 type: DDR4
+	Virtual memory max (MB): 22211.61
+	Virtual memory used (MB): 14155.94
+	Swap memory total (MB): 5888.00
+	Swap memory used (MB): 182.63
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Server Running: true
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:dhmpemfixer, mod:forge, mod:mpem, mod:distanthorizons (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.0.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.4.0_mapped_official_1.20.1.jar    |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |DHMPEMFixer                   |dhmpemfixer                   |1.0                 |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.4.0              |DONE      |Manifest: NOSIGNATURE
+		mpem-2.2.0_mapped_official_1.20.1.jar             |Moonlit Performance Enhancemen|mpem                          |2.2.0               |DONE      |Manifest: NOSIGNATURE
+		distanthorizons-2.3.3-b-1.20.1_mapped_official_1.2|Distant Horizons              |distanthorizons               |2.3.3-b             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 3b2d6f21-fd14-4fd7-bd92-928a882ac918
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.0

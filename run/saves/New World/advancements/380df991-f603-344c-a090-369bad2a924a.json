@@ -1,0 +1,19 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-07-14 19:15:30 +0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:eroded_badlands": "2025-07-14 19:16:48 +0800",
+      "minecraft:badlands": "2025-07-14 19:15:32 +0800",
+      "minecraft:savanna_plateau": "2025-07-14 19:17:17 +0800",
+      "minecraft:dripstone_caves": "2025-07-14 19:17:16 +0800",
+      "minecraft:savanna": "2025-07-14 19:17:15 +0800"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

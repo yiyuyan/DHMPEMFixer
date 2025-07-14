@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.ksmcbrigade.dhmpemfixer.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "dhmpemfixer.refmap.json",
+  "mixins": [
+    "ForgeClientProxyMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
